@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+</head>
+<body>
+
+    <img src="" alt="picture" id="photo" width="1080">
+    <script>
+        
+        console.log('about to fetch a photo');
+        
+        async function myPhoto(){
+            let respooonse = await fetch('photo.jpg');
+            let blooob = await respooonse.blob();
+            document.getElementById('photo').src = URL.createObjectURL(blooob);
+        }
+
+        myPhoto();
+        
+        // fetch('photo.jpg')
+        // .then( response => {
+        //     console.log(response);
+        //     return response.blob();
+        // })
+        // .then( blob => {
+        //     console.log(blob);
+        //     document.getElementById('photo').src = URL.createObjectURL(blob);
+        // })
+
+    </script>
+    
+</body>
+</html>
